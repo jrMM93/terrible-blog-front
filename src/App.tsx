@@ -3,12 +3,14 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Posts from './components/Posts/Posts'
 import Spinner from './components/Spinner/Spinner'
+import Single from './components/Single/Single'
 
 import { requestsCategories } from './requests/categories'
 import { requestsPosts } from './requests/posts'
 import { getPostsByCategory } from './utils/dataTools'
 
 import './styles.scss'
+import Footer from './components/Footer/Footer'
 
 const App: React.FC = () => {
   const [postsQuery, categoriesQuery] = useQueries({
@@ -43,8 +45,10 @@ const App: React.FC = () => {
             element={<Posts posts={getPostsByCategory(postsQuery.data, label)} />}
           />
         ))}
+        <Route path='/posts/:slug' element={<Single posts={postsQuery.data} />} />
         <Route path='*' element={'404'} />
       </Routes>
+      <Footer />
     </div>
   )
 }

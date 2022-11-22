@@ -1,0 +1,13 @@
+@use '../../styles/vars';
+
+.single {
+  width: 100%;
+  padding: vars.$gutter-bigger;
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: vars.$gutter;
+    text-decoration: underline;
+    text-decoration-color: vars.$primary-color;
+  }
+}
