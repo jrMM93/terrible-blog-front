@@ -1,15 +1,10 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { CategoryType } from 'src/requests/categories'
 import './styles.scss'
-
-export type CategoryType = {
-  route: string
-  label: string
-}
 
 type HeaderProps = {
   categories: CategoryType[]
-  isLoading: boolean
 }
 const Header: React.FC<HeaderProps> = ({ categories }) => {
   const navigate = useNavigate()
