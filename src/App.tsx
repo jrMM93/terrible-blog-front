@@ -8,6 +8,8 @@ import { requestsCategories } from './requests/categories'
 import { requestsPosts } from './requests/posts'
 import { getPostsByCategory } from './utils/dataTools'
 
+import './styles.scss'
+
 const App: React.FC = () => {
   const [postsQuery, categoriesQuery] = useQueries({
     queries: [
